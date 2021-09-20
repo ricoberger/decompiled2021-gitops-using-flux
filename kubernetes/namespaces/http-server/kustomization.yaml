@@ -1,0 +1,8 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - http-server-deploy.yaml
+  - http-server-ing.yaml
+  - http-server-ns.yaml
+  - http-server-svc.yaml

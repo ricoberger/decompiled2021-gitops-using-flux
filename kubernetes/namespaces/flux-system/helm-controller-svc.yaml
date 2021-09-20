@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: flux-system
+    control-plane: controller
+    app: helm-controller
+  name: helm-controller
+  namespace: flux-system
+spec:
+  ports:
+    - name: http-prom
+      port: 8080
+      protocol: TCP
+      targetPort: http-prom
+  selector:
+    app: helm-controller
+  type: ClusterIP
