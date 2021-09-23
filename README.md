@@ -3,7 +3,7 @@
 Repository for my talk at **DecompileD 2021** about GitOps using Flux on the 24. September 2021.
 
 - GitHub: [ricoberger/decompiled2021-gitops-using-flux](https://github.com/ricoberger/decompiled2021-gitops-using-flux)
-- Presentation: [GitOps using Flux: How we manage Kubernetes clusters at Staffbase](./assets/gitops-using-flux.pdf)
+- Presentation: [GitOps using Flux: How we manage Kubernetes clusters at Staffbase](./assets/decompiled-gitops-using-flux.pdf)
 - Twitter: [@rico_berger](https://twitter.com/rico_berger)
 
 ## What is GitOps?
