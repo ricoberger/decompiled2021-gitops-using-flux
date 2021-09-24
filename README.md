@@ -99,24 +99,3 @@ kind delete cluster --name decompiled
 docker stop kind-registry
 docker rm kind-registry
 ```
-
-> **Attention:** For the demo we pulled all the Docker images for the Flux components and NGINX and pushed them to the local registry via the following commands:
->
-> ```sh
-> docker pull k8s.gcr.io/ingress-nginx/controller:v1.0.0
-> docker pull fluxcd/helm-controller:v0.10.1
-> docker pull fluxcd/source-controller:v0.12.2
-> docker pull fluxcd/kustomize-controller:v0.12.1
->
-> docker image tag k8s.gcr.io/ingress-nginx/controller:v1.0.0 localhost:5000/ingress-nginx:v1.0.0
-> docker image tag fluxcd/helm-controller:v0.10.1 localhost:5000/helm-controller:v0.10.1
-> docker image tag fluxcd/source-controller:v0.12.2 localhost:5000/source-controller:v0.12.2
-> docker image tag fluxcd/kustomize-controller:v0.12.1 localhost:5000/kustomize-controller:v0.12.1
->
-> docker push localhost:5000/ingress-nginx:v1.0.0
-> docker push localhost:5000/helm-controller:v0.10.1
-> docker push localhost:5000/source-controller:v0.12.2
-> docker push localhost:5000/kustomize-controller:v0.12.1
-> ```
->
-> Please keep this in mind when you want to reproduce the demo.

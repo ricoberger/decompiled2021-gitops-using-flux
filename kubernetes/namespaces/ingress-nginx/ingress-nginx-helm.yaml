@@ -21,13 +21,6 @@ spec:
     crds: Skip
   values:
     controller:
-      name: controller
-      image:
-        registry: localhost:5000
-        image: ingress-nginx
-        tag: "v1.0.0"
-        digest: ""
-
       hostPort:
         enabled: true
         ports:

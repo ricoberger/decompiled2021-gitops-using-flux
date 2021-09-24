@@ -5,10 +5,6 @@ step1:
 	@echo ""
 	@echo ""
 	./kubernetes/create-cluster.sh
-	@docker push localhost:5000/ingress-nginx:v1.0.0
-	@docker push localhost:5000/helm-controller:v0.10.1
-	@docker push localhost:5000/source-controller:v0.12.2
-	@docker push localhost:5000/kustomize-controller:v0.12.1
 	@echo ""
 	@echo ""
 	@echo "Build and Push Docker Image"
