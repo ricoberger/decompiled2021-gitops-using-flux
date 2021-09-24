@@ -17,6 +17,9 @@ step1:
 	@echo ""
 	docker build -f ./http-server/Dockerfile -t localhost:5000/server:v1 .
 	docker push localhost:5000/server:v1
+	@echo ""
+	@echo ""
+	tree kubernetes
 
 .PHONY: step2
 step2:
@@ -24,19 +27,19 @@ step2:
 	@echo "==================================================="
 	@echo ""
 	@echo ""
-	kubectl apply -f kubernetes/namespaces/flux-system/flux-system-clusterrole.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/flux-system-clusterrolebinding.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/flux-system-crds.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/flux-system-ns.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-deploy.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-sa.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-svc.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-deploy.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-sa.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-svc.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/source-controller-deploy.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/source-controller-sa.yaml
-	kubectl apply -f kubernetes/namespaces/flux-system/source-controller-svc.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/flux-system-clusterrole.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/flux-system-clusterrolebinding.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/flux-system-crds.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/flux-system-ns.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-deploy.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-sa.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/helm-controller-svc.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-deploy.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-sa.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/kustomize-controller-svc.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/source-controller-deploy.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/source-controller-sa.yaml
+	@kubectl apply -f kubernetes/namespaces/flux-system/source-controller-svc.yaml
 
 .PHONY: step3
 step3:
@@ -90,6 +93,9 @@ step6:
 	@echo ""
 	@echo ""
 	kubectl get kustomizations.kustomize.toolkit.fluxcd.io -A
+	@echo ""
+	@echo ""
+	kubectl get helmreleases.helm.toolkit.fluxcd.io -A
 	@echo ""
 	@echo ""
 	kubectl get pods -A
